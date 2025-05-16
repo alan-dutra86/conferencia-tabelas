@@ -1,0 +1,108 @@
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    :root {
+      --background-light: 0 0% 100%; /* White */
+      --foreground-light: 220 15% 20%; /* Dark Blue-Gray */
+      --card-light: 0 0% 100%; /* White */
+      --card-foreground-light: 220 15% 20%; /* Dark Blue-Gray */
+      --popover-light: 0 0% 100%; /* White */
+      --popover-foreground-light: 220 15% 20%; /* Dark Blue-Gray */
+      --primary-light: 210 90% 50%; /* Bright Blue */
+      --primary-foreground-light: 0 0% 100%; /* White */
+      --secondary-light: 210 70% 75%; /* Light Blue */
+      --secondary-foreground-light: 220 15% 20%; /* Dark Blue-Gray */
+      --muted-light: 220 20% 96%; /* Very Light Gray-Blue */
+      --muted-foreground-light: 220 10% 45%; /* Medium Gray-Blue */
+      --accent-light: 200 90% 60%; /* Sky Blue */
+      --accent-foreground-light: 220 15% 20%; /* Dark Blue-Gray */
+      --destructive-light: 0 70% 55%; /* Vivid Red */
+      --destructive-foreground-light: 0 0% 100%; /* White */
+      --border-light: 210 30% 85%; /* Light Gray-Blue Border */
+      --input-light: 210 30% 90%; /* Lighter Gray-Blue Input */
+      --ring-light: 210 90% 55%; /* Slightly Darker Bright Blue for Ring */
+      
+      /* Default to light theme */
+      --background: var(--background-light);
+      --foreground: var(--foreground-light);
+      --card: var(--card-light);
+      --card-foreground: var(--card-foreground-light);
+      --popover: var(--popover-light);
+      --popover-foreground: var(--popover-foreground-light);
+      --primary: var(--primary-light);
+      --primary-foreground: var(--primary-foreground-light);
+      --secondary: var(--secondary-light);
+      --secondary-foreground: var(--secondary-foreground-light);
+      --muted: var(--muted-light);
+      --muted-foreground: var(--muted-foreground-light);
+      --accent: var(--accent-light);
+      --accent-foreground: var(--accent-foreground-light);
+      --destructive: var(--destructive-light);
+      --destructive-foreground: var(--destructive-foreground-light);
+      --border: var(--border-light);
+      --input: var(--input-light);
+      --ring: var(--ring-light);
+      --radius: 0.5rem; 
+    }
+
+    .dark {
+      --background: 220 15% 10%; /* Dark Blue */
+      --foreground: 210 20% 95%; /* Very Light Blue/Almost White */
+      --card: 220 15% 15%; /* Slightly Lighter Dark Blue */
+      --card-foreground: 210 20% 95%;
+      --popover: 220 15% 8%; /* Very Dark Blue */
+      --popover-foreground: 210 20% 95%;
+      --primary: 210 90% 60%; /* Bright Blue */
+      --primary-foreground: 220 15% 10%; /* Dark Blue for text on primary */
+      --secondary: 210 70% 40%; /* Medium Blue */
+      --secondary-foreground: 210 20% 95%;
+      --muted: 220 15% 25%; /* Muted Dark Blue */
+      --muted-foreground: 210 15% 70%; /* Lighter Muted Blue */
+      --accent: 200 90% 70%; /* Sky Blue */
+      --accent-foreground: 220 15% 10%; /* Dark Blue for text on accent */
+      --destructive: 0 70% 60%; /* Vivid Red */
+      --destructive-foreground: 210 20% 95%;
+      --border: 210 50% 30%; /* Medium-Dark Blue Border */
+      --input: 220 15% 20%; /* Dark Blue Input */
+      --ring: 210 90% 65%; /* Lighter Bright Blue for Ring */
+    }
+
+    body {
+      @apply bg-background text-foreground;
+      font-family: 'Inter', sans-serif; /* Clean, readable font */
+    }
+
+    .glass-card {
+      background: hsl(var(--card));
+      border-radius: var(--radius);
+      border: 1px solid hsl(var(--border));
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .dark .glass-card {
+      background: hsla(var(--card), 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid hsla(var(--border), 0.7);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--muted));
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--secondary)); 
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary));
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  
